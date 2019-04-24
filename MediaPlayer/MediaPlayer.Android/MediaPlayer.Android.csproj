@@ -64,7 +64,10 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Player\Audio\AudioPlayer.cs" />
+    <Compile Include="Player\Audio\AudioPlayerImplementation.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Player\Explorer\DirectoryPath.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +102,10 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MediaPlayer.Abstractions\MediaPlayer.Abstractions.csproj">
+      <Project>{ab198607-e6f8-45b5-a55b-ab893ef3d91b}</Project>
+      <Name>MediaPlayer.Abstractions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MediaPlayer\MediaPlayer.csproj">
       <Project>{10BEB5AA-885F-48D8-93AA-0A95D05ED996}</Project>
       <Name>MediaPlayer</Name>

@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer.Android", "Medi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer.iOS", "MediaPlayer\MediaPlayer.iOS\MediaPlayer.iOS.csproj", "{F35A5CDF-A0C9-4C4C-8ED7-658AE02DF84C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer.MobileAppService", "MediaPlayer\MediaPlayer.MobileAppService\MediaPlayer.MobileAppService.csproj", "{6C81C3C0-F342-4B8B-96A7-C299AD3A4D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaPlayer.MobileAppService", "MediaPlayer\MediaPlayer.MobileAppService\MediaPlayer.MobileAppService.csproj", "{6C81C3C0-F342-4B8B-96A7-C299AD3A4D34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "MediaPlayer\MediaPlayer\MediaPlayer.csproj", "{CE73B028-D475-4C56-BEB3-375DFF851250}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaPlayer", "MediaPlayer\MediaPlayer\MediaPlayer.csproj", "{CE73B028-D475-4C56-BEB3-375DFF851250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer.Abstractions", "MediaPlayer.Abstractions\MediaPlayer.Abstractions.csproj", "{AB198607-E6F8-45B5-A55B-AB893EF3D91B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,18 @@ Global
 		{CE73B028-D475-4C56-BEB3-375DFF851250}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{CE73B028-D475-4C56-BEB3-375DFF851250}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{CE73B028-D475-4C56-BEB3-375DFF851250}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|iPhone.Build.0 = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{AB198607-E6F8-45B5-A55B-AB893EF3D91B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

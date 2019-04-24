@@ -6,9 +6,7 @@
              x:Name="AudioMediaPlayer">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="buttonPlay" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Text="Play" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
