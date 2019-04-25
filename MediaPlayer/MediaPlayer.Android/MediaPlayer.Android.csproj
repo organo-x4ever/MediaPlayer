@@ -52,6 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>3.0.0.12</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.264807" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="28.0.0.1" />
@@ -64,6 +67,8 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Permissions\DevicePermissionServices.cs" />
+    <Compile Include="PermissionUtil.cs" />
     <Compile Include="Player\Audio\AudioPlayer.cs" />
     <Compile Include="Player\Audio\AudioPlayerImplementation.cs" />
     <Compile Include="MainActivity.cs" />

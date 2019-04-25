@@ -1,11 +1,13 @@
-﻿using System;
+﻿using MediaPlayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MediaPlayer
 {
     public interface IDirectoryPath
     {
-        List<string> GetFiles(string[] extensions);
+        Task<List<FileDetail>> GetFiles();
     }
 }

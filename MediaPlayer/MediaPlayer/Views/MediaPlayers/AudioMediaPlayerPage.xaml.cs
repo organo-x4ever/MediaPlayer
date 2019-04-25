@@ -1,4 +1,6 @@
 ﻿
+using MediaPlayer.Models;
+using MediaPlayer.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,7 @@ namespace MediaPlayer.Views.MediaPlayers
     public partial class AudioMediaPlayerPage : ContentPage
     {
         private readonly IAudioPlayerManager _audioPlayerManager;
+        private readonly IDevicePermissionServices _devicePermissionServices;
         private int TrackIndex = -1;
         public AudioMediaPlayerPage()
         {
@@ -33,15 +36,14 @@ namespace MediaPlayer.Views.MediaPlayers
 
                 void SetPlay()
                 {
+                    if (Files?.Count == 0)
+                        return;
                     TrackIndex++;
-                    _audioPlayerManager.CurrentPlayer.Load(Files[TrackIndex]);
+                    _audioPlayerManager.CurrentPlayer.Load(Files[TrackIndex].Path);
                     _audioPlayerManager.CurrentPlayer.Play();
                 }
-                Files = DependencyService.Get<IDirectoryPath>().GetFiles(new string[] { ".mp3", ".wav" });
-                //Files.Add("https://storage.googleapis.com/wvmedia/clear/h264/tears/tears.mpd");
-                //Files.Add("https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/TearsOfSteel.m3u8");
-                //Files.Add("https://html5demos.com/assets/dizzy.mp4");
-                //Files.Add("https://storage.googleapis.com/exoplayer-test-media-1/ogg/play.ogg");
+                _devicePermissionServices = DependencyService.Get<IDevicePermissionServices>();
+                GetFiles();
             }
             catch (Exception ex)
             {
@@ -49,6 +51,19 @@ namespace MediaPlayer.Views.MediaPlayers
             }
         }
 
-        public List<string> Files { get;set;}
+        private async void GetFiles()
+        {
+            if (!await _devicePermissionServices.RequestReadStoragePermission())
+            {
+                return;
+            }
+            Files = await DependencyService.Get<IDirectoryPath>().GetFiles();
+            //Files.Add("https://storage.googleapis.com/wvmedia/clear/h264/tears/tears.mpd");
+            //Files.Add("https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/TearsOfSteel.m3u8");
+            //Files.Add("https://html5demos.com/assets/dizzy.mp4");
+            //Files.Add("https://storage.googleapis.com/exoplayer-test-media-1/ogg/play.ogg");
+        }
+
+        public List<FileDetail> Files { get; set; }
     }
 }
